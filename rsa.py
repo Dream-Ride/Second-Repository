@@ -8,31 +8,37 @@ def number_primo(number):
     print(" Es primo ")
     return True
     
-def factorizar(n):
-    numeros_primos = iter((2, 3, 5, 7, 11, 13, 17, 19, 23, 29))
+def factorizar(number):
+    numeros_primos = iter((2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 37, 263, 317))
     numero_primo_actual = next(numeros_primos)
     resultado = []
     cociente = None
     while cociente != 1:
-        if n % numero_primo_actual != 0:
+        if number % numero_primo_actual != 0:
             # No se puede dividir por este número primo,
             # obtener el siguiente y volver a ejecutar
             # el bucle.
             numero_primo_actual = next(numeros_primos)
             continue
         resultado.append(numero_primo_actual)
-        n = cociente = n / numero_primo_actual
+        number = cociente = number / numero_primo_actual
     return resultado
 
 number = int(input( " Introduce un número: " ))
 s = 0
 result = 1
-print(resultado[2])
+element = 0
 
 if number_primo(number) == True:
     result = number - 1
     print(str(result))
+elif number_primo(number == False) and :
+    for i in range (len (lista)):
+        if lista[0] == lista[i]
+        #arrreglar para asegurar que cada vez q haga el for entre al if, agregar contador
 else:
-    for r in resultado:
-    result = result(int(resultado[:s]) - 1)
-    s = s + 1
+    factorizar(number)
+    for q in factorizar(number):
+        result = (int(factorizar(number)[element])-1)*result
+        element = element + 1
+    print(str(result))

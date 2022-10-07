@@ -24,6 +24,11 @@ def factorizar(number):
         number = cociente = number / numero_primo_actual
     return resultado
 
+def potencia(number):
+    for i in range(len(factorizar(number))):
+        if factorizar(number)[0] != factorizar(number)[i]:
+            return False
+
 number = int(input( " Introduce un número: " ))
 s = 0
 result = 1
@@ -32,10 +37,17 @@ element = 0
 if number_primo(number) == True:
     result = number - 1
     print(str(result))
-elif number_primo(number == False) and :
-    for i in range (len (lista)):
-        if lista[0] == lista[i]
-        #arrreglar para asegurar que cada vez q haga el for entre al if, agregar contador
+elif number_primo(number == False) and potencia(number) == False:
+    factores = factorizar(number)
+    result = (factores[0] - 1)*factores[1]**(len(factores))
+    print(f"Factorización de {number}:", " x ".join(map(str, factores)))
+
+    print(str(result))
+elif number_primo(number == False) and potencia(number) == True:
+        factores = factorizar(number)
+        result = (factores[0] - 1)*factores[1]**(len(factores))
+        print(f"Factorización de {number}:", " x ".join(map(str, factores)))
+        print(str(result))
 else:
     factorizar(number)
     for q in factorizar(number):

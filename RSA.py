@@ -18,17 +18,18 @@ for i in lista:
             break
 print(a)
 
-texto_llano = a[0]*27 + a[1]
-print(texto_llano)
-texto_cifrado = (texto_llano ** 3)%8383
-print(texto_cifrado)
-mensaje_cifrado = []
+for n in a:
+    texto_llano = int(a[n])*27 + int(a[n + 1])
+    print(texto_llano)
+    texto_cifrado = (texto_llano ** 3)%8383
+    print(texto_cifrado)
+    mensaje_cifrado = []
 
-while texto_cifrado > 27:
-    cifrado = texto_cifrado%27
-    mensaje_cifrado.append(cifrado)
-    texto_cifrado = int(texto_cifrado/27)
-mensaje_cifrado.append(texto_cifrado)
+    while texto_cifrado > 27:
+        cifrado = texto_cifrado%27
+        mensaje_cifrado.append(cifrado)
+        texto_cifrado = int(texto_cifrado/27)
+    mensaje_cifrado.append(texto_cifrado)
 
 print(mensaje_cifrado)
 b = []

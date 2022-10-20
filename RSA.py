@@ -8,7 +8,9 @@ a = []
 
 for i in mensaje:
     lista.append(i)
-print(lista)
+
+if len(lista) % 2 != 0:
+    lista.append("_")
 
 for i in lista:
     for j in abc:
@@ -18,26 +20,28 @@ for i in lista:
             break
 print(a)
 
-for n in a:
-    texto_llano = int(a[n])*27 + int(a[n + 1])
-    print(texto_llano)
-    texto_cifrado = (texto_llano ** 3)%8383
-    print(texto_cifrado)
-    mensaje_cifrado = []
+largo = len(a)-1
+mensaje_cifrado = []
 
-    while texto_cifrado > 27:
-        cifrado = texto_cifrado%27
-        mensaje_cifrado.append(cifrado)
-        texto_cifrado = int(texto_cifrado/27)
-    mensaje_cifrado.append(texto_cifrado)
+for n in range(0, largo):
+    if n % 2 == 0:
+        texto_llano = int(a[n])*27 + int(a[n + 1])
+        texto_cifrado = (texto_llano ** 3)%8383
+
+        while texto_cifrado > 27:
+            cifrado = texto_cifrado % 27
+            mensaje_cifrado.insert(0, cifrado)
+            texto_cifrado = int(texto_cifrado/27- cifrado/100)
+        mensaje_cifrado.insert(0, texto_cifrado)
 
 print(mensaje_cifrado)
 b = []
-print(mensaje_cifrado[0])
 
-for i in mensaje_cifrado:
-    n = mensaje_cifrado[i]
+for i in range(len(mensaje_cifrado) - 1):
     for j in abc:
-        if(n==j):
-            b = abc[j]
-            print(b)
+        if(mensaje_cifrado[i]==j):
+            print(mensaje_cifrado[i])
+            print(j)
+            b.append(abc[j])
+            break
+print(b)

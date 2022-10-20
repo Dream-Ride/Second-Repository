@@ -39,5 +39,13 @@ b = []
 
 for i in mensaje_cifrado:
     b.append(abc[i])
-
 print(b)
+
+c = []
+
+for i in range(0, len(b) - 1):
+    if i % 3 == 0:
+        c.insert(0, ''.join(b[i : i + 3]))
+
+for i in range(len(c)):
+    print(c[i], end= "" )

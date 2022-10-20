@@ -37,11 +37,7 @@ for n in range(0, largo):
 print(mensaje_cifrado)
 b = []
 
-for i in range(len(mensaje_cifrado) - 1):
-    for j in abc:
-        if(mensaje_cifrado[i]==j):
-            print(mensaje_cifrado[i])
-            print(j)
-            b.append(abc[j])
-            break
+for i in mensaje_cifrado:
+    b.append(abc[i])
+
 print(b)

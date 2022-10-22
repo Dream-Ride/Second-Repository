@@ -6,7 +6,7 @@ colorama.init(autoreset=True)
 publica_1 = 8383
 publica_2 = 3
 abc = [ "_" , "a", "b" , "c" , "d" , "e" , "f" , "g" , "h" , "i" , "j" , "k" , "l" , "m" , "n" , "o" , "p", "q" , "r" , "s", "t" , "u" , "v" , "w" , "x" , "y" , "z"]
-mensaje = input( " Bienvenido a la encriptacion de mensajes por el sistema RSA. Escribe en minuscula el mensaje a encriptar: " ).casefold()
+mensaje = input( "Bienvenido a la encriptación de mensajes por el sistema RSA. Escriba el mensaje a encriptar: " ).casefold()
 lista = []
 a = []
 
@@ -35,18 +35,18 @@ for n in range(0, largo):
             mensaje_cifrado.insert(0, cifrado)
             texto_cifrado = int(texto_cifrado/27- cifrado/100)
         mensaje_cifrado.insert(0, texto_cifrado)
-
+        if len(mensaje_cifrado) % 3 != 0:
+            mensaje_cifrado.insert(0, 0)
 b = []
 
 for i in mensaje_cifrado:
     b.append(abc[i])
-
 c = []
 
 for i in range(0, len(b) - 1):
     if i % 3 == 0:
         c.insert(0, ''.join(b[i : i + 3]))
 
-print( "\n Su mensaje encriptado es: ", end= "" )
+print( "\nSu mensaje encriptado es: ", end= "" )
 for i in range(len(c)):
     print(Fore.CYAN + c[i], end= "" )

@@ -30,11 +30,15 @@ for n in range(0, largo):
         texto_llano = int(a[n])*27 + int(a[n + 1])
         texto_cifrado = (texto_llano ** publica_2) % publica_1
 
-        while texto_cifrado >= 27:
-            cifrado = texto_cifrado % 27
-            mensaje_cifrado.insert(0, cifrado)
-            texto_cifrado = int(texto_cifrado/27- cifrado/100)
-        mensaje_cifrado.insert(0, texto_cifrado)
+        if texto_cifrado >= 27:
+            while texto_cifrado >= 27:
+                cifrado = texto_cifrado % 27
+                mensaje_cifrado.insert(0, cifrado)
+                texto_cifrado = int(texto_cifrado/27- cifrado/100)
+            mensaje_cifrado.insert(0, texto_cifrado)
+        else:
+            mensaje_cifrado.insert(0, texto_cifrado)
+            mensaje_cifrado.insert(0, 0)
         if len(mensaje_cifrado) % 3 != 0:
             mensaje_cifrado.insert(0, 0)
 b = []
